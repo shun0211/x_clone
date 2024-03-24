@@ -1,7 +1,7 @@
 databases:
   - name: x_clone_db
     databaseName: x_clone_db_f6zo
-    user: x_clone_db_f6zo_user
+    user: x_clone
     region: singapore
 
 services:
