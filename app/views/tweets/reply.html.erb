@@ -1,0 +1,34 @@
+<%= render "shared/header" %>
+
+<main class="main">
+  <%= render "shared/sidebar" %>
+  <div class="main-content">
+
+    <div class="tweet-container">
+      <div class="tweet">
+        <div class="tweet-user-icon-container">
+          <div class="tweet-user-icon"><%= image_tag current_user.profile_image_url, size: "44x44" %></div>
+        </div>
+        <div class="tweet-content-container">
+          <div class="tweet-user-name">
+            <%= current_user.name %>
+          </div>
+          <div class="tweet-content">
+            <%= @tweet.content %>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="vertical-bar"></div>
+    <div class="tweet-form">
+      <%= form_with model: @reply do |form| %>
+        <%= form.text_area :content, class: "form-control tweet-text-area", placeholder: "返信をポスト" %>
+        <%= form.hidden_field :parent_tweet_id, value: @tweet.id %>
+        <div class="button">
+          <%= form.submit "返信する", class: "post-button" %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+  <%= render "shared/right_sidebar" %>
+</main>

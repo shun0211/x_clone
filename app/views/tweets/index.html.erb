@@ -1,0 +1,19 @@
+<%= render "shared/header" %>
+
+<main class="main">
+  <%= render "shared/sidebar" %>
+  <section class="main-content">
+      <%= form_with url: tweets_path, method: :get, class: "search-form" do |form| %>
+        <%= form.text_field :keyword, class: "search-input form-control", placeholder: "検索" %>
+        <%= form.submit "検索", class: "search-button" %>
+      <% end %>
+
+    <div class="tweets">
+      <% @tweets.each do |tweet| %>
+        <%= render "tweet", tweet: tweet %>
+      <% end %>
+      <%= paginate @tweets %>
+    </div>
+  </section>
+  <%= render "shared/right_sidebar" %>
+</main>

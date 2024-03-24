@@ -1,0 +1,20 @@
+ja:
+  activerecord:
+    attributes:
+      tweet:
+        content: ツイート
+      user:
+        name: 名前
+        profile: プロフィール
+    errors:
+      models:
+        tweet:
+          attributes:
+            content:
+              blank: "は空白にできません。"
+        user:
+          attributes:
+            name:
+              blank: "は空白にできません。"
+            profile:
+              length: "は200文字以下で入力してください。"

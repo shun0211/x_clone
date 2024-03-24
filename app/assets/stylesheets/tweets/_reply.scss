@@ -1,0 +1,51 @@
+#tweets_reply {
+  .main {
+    width: 90%;
+    margin: 0 auto;
+    display: flex;
+
+    .main-content {
+      width: 80%;
+
+      .tweet {
+        display: flex;
+        padding: 20px;
+        border-bottom: 1px solid #fffafa;
+        width: 100%;
+
+        .tweet-user-icon-container {
+          margin-right: 20px;
+        }
+
+        .tweet-content-container {
+          .tweet-user-name {
+            font-weight: 600;
+          }
+
+          .tweet-content {
+            padding-top: 5px;
+          }
+        }
+      }
+
+      .vertical-bar {
+        height: 40px;
+        width: 0.5px;
+        background-color: #B5B5B6;
+        margin-left: 40px;
+      }
+
+      .tweet-form {
+        margin-top: 20px;
+
+        .tweet-text-area {
+          height: 150px;
+        }
+
+        .button {
+          margin-top: 20px;
+        }
+      }
+    }
+  }
+}

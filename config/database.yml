@@ -22,6 +22,8 @@ default: &default
 development:
   <<: *default
   database: x_clone_development
+  host: localhost
+  port: 5432
 
   # The specified database role being used to connect to PostgreSQL.
   # To create additional roles in PostgreSQL see `$ createuser --help`.
@@ -79,6 +81,9 @@ test:
 #
 production:
   <<: *default
-  database: x_clone_production
-  username: x_clone
-  password: <%= ENV["X_CLONE_DATABASE_PASSWORD"] %>
+#  database: x_clone_production
+#  username: x_clone
+#  password: <%#= ENV["X_CLONE_DATABASE_PASSWORD"] %>
+  adapter: postgresql
+  encoding: unicode
+  pool: 5

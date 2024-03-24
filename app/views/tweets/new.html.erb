@@ -1,0 +1,15 @@
+<%= render "shared/header" %>
+
+<main class="main">
+  <%= render "shared/sidebar" %>
+  <section class="tweet-form">
+    <%= render "shared/error_messages", model: @tweet %>
+    <%= form_with model: @tweet do |form| %>
+      <%= form.text_area :content, class: "form-control tweet-text-area", placeholder: "いまどうしてる？" %>
+      <div class="button">
+        <%= form.submit "ポストする", class: "post-button" %>
+      </div>
+    <% end %>
+  </section>
+  <%= render "shared/right_sidebar" %>
+</main>

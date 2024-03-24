@@ -1,0 +1,25 @@
+.sidebar {
+  width: 22%;
+
+  .sidebar-content {
+    margin-top: 30px;
+
+    .nav-item {
+      padding-top: 7px;
+      padding-bottom: 7px;
+
+      i {
+        margin-right: 10px;
+      }
+
+      a {
+        text-decoration: none;
+        color: black;
+      }
+    }
+
+    .button {
+      margin-top: 20px;
+    }
+  }
+}

@@ -1,0 +1,7 @@
+<div class="like-button" data-tweet-id="<%= tweet.id %>">
+  <% if tweet.liked_by?(user) %>
+    <i class="bi bi-heart-fill heart-icon liked"></i> <span class="like-count liked"><%= tweet.likes.count %></span>
+  <% else %>
+    <i class="bi bi-heart heart-icon"></i> <span class="like-count"><%= tweet.likes.count %></span>
+  <% end %>
+</div>

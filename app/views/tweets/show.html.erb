@@ -1,0 +1,42 @@
+<%= render "shared/header" %>
+
+<main class="main">
+  <%= render "shared/sidebar" %>
+  <div class="main-content">
+
+    <div class="tweet-container">
+      <div class="tweet">
+        <div class="tweet-user-icon-container">
+          <div class="tweet-user-icon"><%= image_tag current_user.profile_image_url, size: "44x44" %></div>
+        </div>
+        <div class="tweet-content-container">
+          <div class="tweet-user-name">
+            <%= current_user.name %>
+          </div>
+          <div class="tweet-content">
+            <%= @tweet.content %>
+          </div>
+        </div>
+      </div>
+      <div class="datetime">午後21:11 2024年3月15日</div>
+      <div class="tweet-actions">
+        <div class="tweet-action">
+          <div class="reply-button">
+            <%= link_to reply_new_tweet_path(@tweet) do %>
+              <i class="bi bi-chat"></i>
+            <% end %>
+          </div>
+        </div>
+        <div class="tweet-action">
+          <%= render "shared/like_button", tweet: @tweet, user: current_user %>
+        </div>
+      </div>
+      <div class="tweets">
+        <% @reply_tweets.each do |tweet| %>
+          <%= render "tweet", tweet: tweet %>
+        <% end %>
+      </div>
+    </div>
+  </div>
+  <%= render "shared/right_sidebar" %>
+</main>

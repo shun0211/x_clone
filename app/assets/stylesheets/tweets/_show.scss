@@ -1,0 +1,45 @@
+#tweets_show {
+  .main {
+    width: 90%;
+    margin: 0 auto;
+    display: flex;
+
+    .main-content {
+      width: 80%;
+
+      .tweet {
+        display: flex;
+        padding: 20px;
+        width: 100%;
+
+        .tweet-user-icon-container {
+          margin-right: 20px;
+        }
+
+        .tweet-content-container {
+          .tweet-user-name {
+            font-weight: 600;
+          }
+
+          .tweet-content {
+            padding-top: 5px;
+          }
+        }
+      }
+
+      .datetime {
+        color: #767676;
+        font-size: 14px;
+        padding-left: 20px;
+      }
+
+      .tweet-actions {
+        display: flex;
+        justify-content: space-around;
+        margin-top: 5px;
+        border-bottom: 1px solid #fffafa;
+        padding-bottom: 10px;
+      }
+    }
+  }
+}

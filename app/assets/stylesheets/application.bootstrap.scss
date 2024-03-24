@@ -1,2 +1,13 @@
 @import 'bootstrap/scss/bootstrap';
 @import 'bootstrap-icons/font/bootstrap-icons';
+@import "common";
+@import "tweets/_index";
+@import "tweets/_new";
+@import "tweets/_show";
+@import "tweets/_reply";
+@import "users/_show";
+@import 'components/_header';
+@import 'components/_sidebar';
+@import "components/_right_sidebar";
+@import "components/_button";
+@import "components/_tweet";

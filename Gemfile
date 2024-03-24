@@ -61,6 +61,8 @@ group :development do
 
   # Speed up commands on slow machines / big apps [https://github.com/rails/spring]
   # gem "spring"
+
+  gem 'annotate'
 end
 
 group :test do
@@ -68,3 +70,8 @@ group :test do
   gem "capybara"
   gem "selenium-webdriver"
 end
+
+gem 'carrierwave', '~> 3.0'
+gem "devise"
+gem 'devise-i18n'
+gem 'kaminari'
