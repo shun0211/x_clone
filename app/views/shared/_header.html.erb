@@ -1,6 +1,8 @@
 <header class="header">
   <div class="header-content">
     <div><%= image_tag "twitter.png", size: "44x44" %></div>
-    <div><%= link_to "ログアウト", "" %></div>
+    <div data-turbo="true">
+      <%= link_to "ログアウト", destroy_user_session_path, data: { "turbo-method": :delete, "turbo_confirm": "ログアウトしますか？" } %>
+    </div>
   </div>
 </header>
