@@ -4,6 +4,27 @@
     justify-content: space-between;
     width: 90%;
     margin: 0 auto;
-    padding-top: 10px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+  }
+
+  .menu {
+    display: flex;
+    align-items: center;
+
+    .header-btn {
+      padding-right: 5px;
+      padding-left: 5px;
+      display: block;
+      margin-right: 3px;
+      margin-left: 3px;
+    }
+
+    .trial-btn {
+      background-color: #1da1f2;
+      color: white;
+      border-radius: 20px;
+      padding: 5px 10px;
+    }
   }
 }

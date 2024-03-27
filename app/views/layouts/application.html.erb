@@ -11,6 +11,9 @@
   </head>
 
   <body id="<%= "#{controller_name}_#{action_name}" %>">
+    <% flash.each do |message_type, message| %>
+      <div class="flash-message <%= message_type %>"><%= message %></div>
+    <% end %>
     <%= yield %>
   </body>
 </html>

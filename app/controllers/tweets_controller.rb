@@ -1,12 +1,11 @@
 class TweetsController < ApplicationController
-  before_action :authenticate_user!
+  before_action :authenticate_user!, only: %i[new create edit reply]
 
   def index
     @tweets = Tweet
                 .order(created_at: :desc)
                 .search(params[:keyword])
                 .page(params[:page])
-
   end
 
   def new
@@ -16,7 +15,7 @@ class TweetsController < ApplicationController
   def create
     @tweet = Tweet.new(tweet_params)
     if @tweet.save
-      redirect_to tweets_path
+      redirect_to tweets_path, notice: "ポストを送信しました。"
     else
       render :new
     end

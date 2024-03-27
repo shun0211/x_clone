@@ -1,13 +1,21 @@
 <section class="sidebar">
   <div class="sidebar-content">
     <div class="nav-items">
-      <div class="nav-item"><i class="bi bi-house-fill"></i><%= link_to "ホーム", tweets_path %></div>
-      <div class="nav-item"><i class="bi bi-search"></i><%= link_to "話題を検索", "" %></div>
-      <div class="nav-item"><i class="bi bi-envelope"></i><%= link_to "メッセージ", "" %></div>
-      <div class="nav-item"><i class="bi bi-person-fill"></i><%= link_to "プロフィール", user_path(current_user) %></div>
+      <% if user_signed_in? %>
+        <div class="nav-item"><i class="bi bi-house-fill"></i><%= link_to "ホーム", tweets_path %></div>
+        <div class="nav-item"><i class="bi bi-search"></i><%= link_to "話題を検索", "" %></div>
+        <div class="nav-item"><i class="bi bi-envelope"></i><%= link_to "メッセージ", "" %></div>
+        <div class="nav-item"><i class="bi bi-person-fill"></i><%= link_to "プロフィール", user_path(current_user) %>
+        </div>
+      <% else %>
+        <div class="nav-item"><i class="bi bi-house-fill"></i><%= link_to "ホーム", tweets_path %></div>
+        <div class="nav-item"><i class="bi bi-search"></i><%= link_to "話題を検索", "" %></div>
+      <% end %>
     </div>
-    <div class="button">
-      <%= link_to "ポストする", new_tweet_path, class: "post-button" %>
-    </div>
+    <% if user_signed_in? %>
+      <div class="button">
+        <%= link_to "ポストする", new_tweet_path, class: "post-button" %>
+      </div>
+    <% end %>
   </div>
 </section>

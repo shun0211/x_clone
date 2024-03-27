@@ -1,17 +1,21 @@
 <%= link_to tweet_path(tweet) do %>
   <div class="tweet">
     <div class="tweet-user-icon-container">
-      <div class="tweet-user-icon"><%= image_tag current_user.profile_image_url, size: "44x44" %></div>
+      <div class="tweet-user-icon"><%= image_tag tweet.user.profile_image_url, size: "44x44" %></div>
     </div>
     <div class="tweet-content-container">
       <div class="tweet-user-name">
-        <%= current_user.name %>
+        <%= tweet.user.name %>
       </div>
       <div class="tweet-content">
         <%= tweet.content %>
       </div>
       <div class="tweet-actions">
-        <%= render "shared/like_button", tweet: tweet, user: current_user %>
+        <% if user_signed_in? %>
+          <%= render "shared/like_button", tweet: tweet, user: current_user %>
+        <% else %>
+          <%= render "shared/disabled_like_button", tweet: tweet %>
+        <% end %>
       </div>
     </div>
   </div>
