@@ -4,13 +4,13 @@
     <div class="menu">
       <% if user_signed_in? %>
         <div data-turbo="true">
-          <%= link_to "ログアウト", destroy_user_session_path, data: { "turbo-method": :delete, "turbo_confirm": "ログアウトしますか？" } %>
+          <%= button_to "ログアウト", destroy_user_session_path, data: { "turbo-method": :delete, "turbo_confirm": "ログアウトしますか？" } %>
         </div>
       <% else %>
         <%= link_to "新規登録", new_user_registration_path, class: "header-btn" %>
         <%= link_to "ログイン", new_user_session_path, class: "header-btn" %>
         <div data-turbo="true">
-          <%= link_to "ゲストログイン", guest_sign_in_path, data: { "turbo-method": :post }, class: "header-btn trial-btn" %>
+          <%= button_to "ゲストログイン", guest_sign_in_path, data: { "turbo-method": :post }, class: "header-btn trial-btn" %>
         </div>
       <% end %>
     </div>
