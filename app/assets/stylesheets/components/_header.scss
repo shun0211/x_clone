@@ -12,6 +12,12 @@
     display: flex;
     align-items: center;
 
+    .logout-btn {
+      background-color: white;
+      color: black;
+      border: none;
+    }
+
     .header-btn {
       padding-right: 5px;
       padding-left: 5px;
@@ -25,6 +31,7 @@
       color: white;
       border-radius: 20px;
       padding: 5px 10px;
+      border: none;
     }
   }
 }

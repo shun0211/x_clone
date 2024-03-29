@@ -3,16 +3,12 @@
     <div><%= image_tag "twitter.png", size: "44x44" %></div>
     <div class="menu">
       <% if user_signed_in? %>
-        <!-- 本番環境での GET メソッドになったため、button_to に変更した。Turbo 使っていないので Rails 6 で -->
-        <div data-turbo="true">
-          <%= link_to "ログアウト", destroy_user_session_path, method: :delete, data: { "turbo-method": :delete, "turbo_confirm": "ログアウトしますか？" } %>
-        </div>
+        <!-- link_to & data-turbo="true" にすると本番環境だけで GET メソッドになったため、button_to に変更した。Turbo 使っていないので Turbo なしで作り直したほうがいいかもしれない -->
+        <%= button_to "ログアウト", destroy_user_session_path, method: :delete, class: "header-btn logout-btn" %>
       <% else %>
         <%= link_to "新規登録", new_user_registration_path, class: "header-btn" %>
         <%= link_to "ログイン", new_user_session_path, class: "header-btn" %>
-        <div data-turbo="true">
-          <%= link_to "ゲストログイン", guest_sign_in_path, method: :delete, data: { "turbo-method": :post }, class: "header-btn trial-btn" %>
-        </div>
+        <%= button_to "ゲストログイン", guest_sign_in_path, method: :post, class: "header-btn trial-btn" %>
       <% end %>
     </div>
   </div>
