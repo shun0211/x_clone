@@ -6,5 +6,4 @@ pin "@hotwired/stimulus", to: "stimulus.min.js"
 pin "@hotwired/stimulus-loading", to: "stimulus-loading.js"
 pin_all_from "app/javascript/controllers", under: "controllers"
 pin "bootstrap", to: "bootstrap.min.js"
-pin "application", to: "application.js", preload: true
-pin "likes", to: "likes.js"
+pin_all_from "app/javascript/src", under: "src", to: "src"

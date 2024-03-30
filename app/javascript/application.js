@@ -2,5 +2,5 @@
 import { Turbo } from "@hotwired/turbo-rails"
 Turbo.session.drive = false // Disable Turbo Drive
 import "controllers"
-import * as bootstrap from "bootstrap"
-import './likes'
+// import * as bootstrap from "bootstrap"
+// import './src/likes'
