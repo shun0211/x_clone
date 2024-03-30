@@ -1,4 +1,4 @@
-document.addEventListener('DOMContentLoaded', () => {
+document.addEventListener('turbo:load', () => {
   const likeButtons = document.querySelectorAll('.like-button');
   likeButtons.forEach((button) => {
     button.addEventListener('click', (event) => {
