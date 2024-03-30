@@ -1,4 +1,5 @@
-document.addEventListener('turbo:load', () => {
+console.log('likes.jsが読み込まれました！');
+document.addEventListener('DOMContentLoaded', () => {
   const likeButtons = document.querySelectorAll('.like-button');
   likeButtons.forEach((button) => {
     button.addEventListener('click', (event) => {
